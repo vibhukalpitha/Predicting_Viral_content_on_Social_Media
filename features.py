@@ -45,7 +45,6 @@ plt.tight_layout()
 plt.show()
 
 # 2) Category vs Region (stacked bar chart)
-plt.figure(figsize=(12, 6))
 category_region_pivot = category_region.pivot(index="category", columns="region", values="count").fillna(0)
 category_region_pivot.plot(kind="bar", stacked=True, figsize=(12, 6), cmap="tab20")
 plt.title("Posts by Category and Region", fontsize=16)
@@ -54,6 +53,7 @@ plt.xlabel("Category")
 plt.legend(title="Region", bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
+
 
 # 3) Post Day vs Region (grouped bar chart)
 plt.figure(figsize=(12, 6))
