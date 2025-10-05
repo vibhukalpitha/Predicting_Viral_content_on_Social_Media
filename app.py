@@ -25,35 +25,50 @@ st.markdown("""
     text-align: center;
     color: #fff;
 }
-
 .header-title-box {
     font-size:3rem;
     font-weight:800;
     margin-bottom: 0.5rem;
-    color: #ffeb3b;  /* Yellow title */
+    color: #ffeb3b;
 }
-
 .header-subtitle-box {
     font-size:1.5rem;
-    color: #ffcc80;  /* Light orange subtitle */
+    color: #ffcc80;
 }
-
 /* -------- TAGS STYLING -------- */
 .tag-section { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 15px; }
 .tag-pill { background: linear-gradient(90deg, #8e24aa, #6a1b9a); color: white; padding: 10px 18px; border-radius: 25px; font-size: 16px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); cursor: pointer; transition: all 0.3s ease; }
 .tag-pill:hover { transform: translateY(-3px); background: linear-gradient(90deg, #7b1fa2, #4a148c); box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
-
 /* -------- PRO TIPS STYLING -------- */
 .tips-container { display: flex; flex-direction: column; gap: 20px; margin-top: 2rem; align-items:center; }
 .tip-card { background: linear-gradient(135deg, #ba68c8, #8e24aa); color: white; width: 300px; padding: 15px; border-radius: 15px;
             box-shadow: 0px 4px 15px rgba(0,0,0,0.3); text-align: center; font-size: 15px; font-weight: 500; }
-
-/* -------- BUTTON STYLING -------- */
-.page-btn { display:inline-block; padding:10px 20px; margin:8px; background:linear-gradient(90deg,#6a1b9a,#8e24aa);
-            color:white; border:none; border-radius:25px; font-weight:600; text-decoration:none; text-align:center; transition:all 0.3s; }
-.page-btn:hover { background:linear-gradient(90deg,#4a148c,#6a1b9a); transform:translateY(-2px); }
-.back-btn { background:#fff; color:#6a1b9a; border:2px solid #6a1b9a; border-radius:25px; padding:10px 20px; font-weight:600; }
-.back-btn:hover { background:#6a1b9a; color:white; }
+/* -------- BUTTONS: MODERN SLEEK STYLE -------- */
+.stButton > button, .stDownloadButton > button {
+    background: linear-gradient(90deg, #6a1b9a 0%, #8e24aa 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 0.7rem 2.2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 12px #a5b4fc55;
+    transition: 0.2s;
+    margin: 0.5rem 0;
+    letter-spacing: 1px;
+    outline: none !important;
+}
+.stButton > button:hover, .stDownloadButton > button:hover {
+    background: linear-gradient(90deg, #4a148c 0%, #6a1b9a 100%) !important;
+    color: #fff !important;
+    transform: scale(1.04);
+    box-shadow: 0 4px 18px #a5b4fc99;
+}
+.stButton > button:active, .stDownloadButton > button:active {
+    background: linear-gradient(90deg, #8e24aa 0%, #6a1b9a 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 1px 4px #a5b4fc99;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -161,8 +176,8 @@ if st.session_state.page == "main":
 # ---------------------- PRO TIPS PAGE ----------------------
 elif st.session_state.page == "tips":
     result = st.session_state.result
-    st.markdown("<h1 class='header-title'>💡 Pro Tips</h1>", unsafe_allow_html=True)
-    st.markdown("<p class='header-subtitle'>Follow these expert insights to maximize your content’s performance.</p>", unsafe_allow_html=True)
+    st.markdown("<div class='header-title-box''>💡 Pro Tips</h1>", unsafe_allow_html=True)
+    st.markdown("<p class='header-subtitle-box'>Follow these expert insights to maximize your content’s performance.</p>", unsafe_allow_html=True)
     
     if result:
         st.markdown("<div class='tips-container'>", unsafe_allow_html=True)
