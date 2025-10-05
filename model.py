@@ -12,7 +12,7 @@ from sklearn.neighbors import KNeighborsClassifier
 # ----------------------
 # 1) Load dataset & sample 10K rows
 # ----------------------
-df = pd.read_csv(r"C:\Users\Vibhu\Desktop\Predicting_Viral_content_on_Social_Media4\social_media_engagement_prerossed.csv")
+df = pd.read_csv("data/social_media_engagement_updated_prerossed.csv")
 sample_df = df.sample(n=10000, random_state=42)
 
 X = sample_df.drop("viral_label", axis=1)

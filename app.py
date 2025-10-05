@@ -58,7 +58,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------------- Load Data ----------------------
-file_path = r"C:\Users\Vibhu\Desktop\Predicting_Viral_content_on_Social_Media4\social_media_engagement_prerossed.csv"
+file_path ="data/social_media_engagement_updated_prerossed.csv"
 df_vis = pd.read_csv(file_path)
 categories = sorted(viral_df["category"].dropna().unique())
 regions = sorted(viral_df["region"].dropna().unique())
